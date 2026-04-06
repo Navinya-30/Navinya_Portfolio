@@ -1,5 +1,5 @@
 // ================= LOAD PROJECTS DYNAMICALLY =================
-fetch("data/projects.json")
+fetch("projects.json")
   .then(response => response.json())
   .then(projects => {
     const container = document.getElementById("projects-container");
