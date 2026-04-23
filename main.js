@@ -56,15 +56,16 @@ reveals.forEach(el => observer.observe(el));
 
 // ===== SKILLS DATA =====
 const skills = [
-  { name: 'HTML', emoji: '🌐', level: 'Intermediate' },
-  { name: 'CSS', emoji: '🎨', level: 'Intermediate' },
-  { name: 'JavaScript', emoji: '⚡', level: 'Learning' },
-  { name: 'C / C++', emoji: '🔧', level: 'Intermediate' },
-  { name: 'Java', emoji: '☕', level: 'Learning' },
-  { name: 'Git', emoji: '🌿', level: 'Intermediate' },
-  { name: 'GitHub', emoji: '🐙', level: 'Intermediate' },
-  { name: 'Graphic Design', emoji: '✏️', level: 'Comfortable' },
-  { name: 'Databases', emoji: '🗄️', level: 'Learning' },
+  { name: 'HTML', emoji: '🌐' },
+  { name: 'CSS', emoji: '🎨' },
+  { name: 'JavaScript', emoji: '⚡' },
+  { name: 'C ', emoji: '🔧' },
+  // { name: 'Java', emoji: '☕' },
+  { name: 'Git', emoji: '🌿' },
+  { name: 'GitHub', emoji: '🐙' },
+  { name: 'Graphic Design', emoji: '✏️' },
+  { name: 'MySql', emoji: '🗄️' },
+  { name: 'React.js', emoji: '🌐' },
 ];
 
 const skillsGrid = document.getElementById('skillsGrid');
@@ -75,7 +76,6 @@ skills.forEach((skill, i) => {
   card.innerHTML = `
     <div class="skill-emoji">${skill.emoji}</div>
     <div class="skill-name">${skill.name}</div>
-    <div class="skill-level">${skill.level}</div>
   `;
   skillsGrid.appendChild(card);
 });
@@ -89,22 +89,22 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     emoji: '🚀',
     bg: 'linear-gradient(135deg, #1a0533, #2d0b55)',
-    github: 'https://github.com/Navinya-30',
+    Vercel: 'https://my-portfolio-nine-nu-r0uktmdnfl.vercel.app/',
     demo: '#',
   },
   {
-    title: 'Coming Soon 🔨',
-    desc: 'Currently working on exciting new projects. Check back here soon!',
-    tags: ['In Progress'],
+    title: 'Smart Public Complaint Tracker 🔨',
+    desc: 'Currently working on exciting new project. Check back here soon!',
+    tags: ['HTML', 'CSS', 'JavaScript', 'ReactJS'],
     emoji: '⚙️',
     bg: 'linear-gradient(135deg, #0a1a2e, #0d2b4a)',
-    github: 'https://github.com/Navinya-30',
+    Vercel: 'https://smart-public-complaint-tracker.vercel.app/',
     demo: '#',
   },
   {
-    title: 'Add Your Project',
-    desc: 'Edit the projects array in main.js to add your own projects here.',
-    tags: ['Your Work'],
+    title: 'Auto Comment Generator',
+    desc: 'Currently working on exciting new project. Check back here soon!',
+    tags: ['JavaScript'],
     emoji: '✨',
     bg: 'linear-gradient(135deg, #0d1f0d, #163516)',
     github: '#',
