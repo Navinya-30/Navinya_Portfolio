@@ -1,228 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Navinya — Web Developer</title>
+  <title>Navinya — Full Stack Developer & Creative Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <!-- Cabinet Grotesk via Fontshare -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- Navbar -->
-  <header class="header" id="header">
-    <nav class="navbar">
-      <div class="logo">N<span>.</span></div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+  <!-- NAVBAR -->
+  <header class="nav-wrap" id="navbar">
+    <nav class="nav-inner">
+      <a href="#home" class="nav-logo">Navinya<span class="dot">.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-item active">Home</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#design" class="nav-item">Design</a></li>
+        <li><a href="#leadership" class="nav-item">Leadership</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="grid-overlay"></div>
-    </div>
-    <div class="hero-content">
+    <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-greeting reveal">Hello, world 👋</p>
-        <h1 class="hero-title reveal">
-          I'm <span class="highlight">Navinya</span><br/>
-          Web Developer & </br> Designer <br/>
+        <p class="hero-label">Available for internships & collaborations</p>
+        <h1 class="hero-heading">
+          Hi, I'm <span class="accent">Navinya</span>.<br/>
+          Full Stack Developer.
         </h1>
-        <p class="hero-sub reveal">
-          A passionate beginner developer crafting real projects integrated with AI, clean code and creative design.
-        </p>
-        <div class="hero-cta reveal">
+        <p class="hero-desc">Building real-world web applications with AI, clean code, and creative design.</p>
+        <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
         </div>
-        <div class="social-links reveal">
-          <a href="https://github.com/Navinya-30" target="_blank" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <div class="hero-links">
+          <a href="https://github.com/Navinya-30" target="_blank" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/navinya-ghanekar-479251328/" target="_blank" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          <a href="https://www.linkedin.com/in/navinyaghanekar" target="_blank" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
-      <div class="hero-photo reveal">
-        <div class="photo-frame">
-          <div class="photo-placeholder">
-            <div class="photo-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <img src="navinya_pic.jpeg" alt="Navinya" /> 
+      <div class="hero-photo">
+        <div class="photo-wrap">
+          <!-- Replace src with your photo path -->
+          <img src="navinya-photo.png" alt="Navinya" class="profile-img" onerror="this.parentElement.classList.add('no-photo')"/>
+          <div class="photo-fallback">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="56" height="56"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Add photo.jpg</span>
           </div>
-          <div class="photo-decoration"></div>
         </div>
       </div>
     </div>
-    <!-- <div class="scroll-indicator">
-      <div class="scroll-dot"></div>
-      <span>Scroll</span>
-    </div> -->
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
+  <!-- ABOUT -->
+  <section id="about" class="section">
     <div class="container">
-      <div class="section-header reveal">
-        <!-- <span class="section-tag">Who I Am</span> -->
-        <h2 class="section-title">About Me</h2>
-      </div>
+      <div class="section-label">About</div>
       <div class="about-grid">
-        <div class="about-text reveal">
-          <p>I'm <strong>Navinya</strong>, a beginner developer with a deep curiosity for building things on the web. I love combining technical skills with creative design to create experiences that are both functional and beautiful.</p>
-          <p>Currently expanding my skillset with <strong>Java,</strong> and <strong>Databases</strong>, while sharpening my frontend abilities through real projects.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">8+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">∞</span>
-              <span class="stat-label">Curiosity</span>
-            </div>
-            <!-- <div class="stat">
-              <span class="stat-num">100%</span>
-              <span class="stat-label">Dedication</span>
-            </div> -->
-          </div>
+        <div class="about-left fade-in">
+          <h2 class="section-heading">Building at the intersection of code and design.</h2>
         </div>
-        <div class="about-card reveal">
-          <div class="card-inner">
-            <div class="card-item">
-              <span class="card-icon">🎯</span>
-              <div>
-                <strong>Goal</strong>
-                <p>Build impactful real-world projects integrated with AI</p>
-              </div>
-            </div>
-            <div class="card-item">
-              <span class="card-icon">💻</span>
-              <div>
-                <strong>Currently Learning</strong>
-                <p>React.js, MySQL, JavaScript, DSA</p>
-              </div>
-            </div>
-            <div class="card-item">
-              <span class="card-icon">🎨</span>
-              <div>
-                <strong>Passion</strong>
-                <p>Clean code + Creative Design</p>
-              </div>
-            </div>
-            <div class="card-item">
-              <span class="card-icon">📧</span>
-              <div>
-                <strong>Email</strong>
-                <p>navinyaghanekar30@gmail.com</p>
-              </div>
-            </div>
+        <div class="about-right fade-in">
+          <p>I'm Navinya, a developer and designer focused on creating web applications that are both technically sound and visually refined. I work across the full stack and bring a designer's eye to every project I build.</p>
+          <p>Currently deepening my knowledge of Java, databases, and full-stack architecture while leading design initiatives at my college's Students' Representative Council.</p>
+          <div class="about-tags">
+            <span class="about-tag">Full Stack Development</span>
+            <span class="about-tag">UI/UX Design</span>
+            <span class="about-tag">Graphic Design</span>
+            <span class="about-tag">Open to Internships</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="skills">
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">What I Know</span>
-        <h2 class="section-title">Skills</h2>
-      </div>
+      <div class="section-label">Skills</div>
+      <h2 class="section-heading fade-in">What I Know</h2>
       <div class="skills-grid" id="skillsGrid"></div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">What I've Built</span>
-        <h2 class="section-title">Projects</h2>
-      </div>
+      <div class="section-label">Projects</div>
+      <h2 class="section-heading fade-in">What I've Built</h2>
       <div class="projects-grid" id="projectsGrid"></div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- GRAPHIC DESIGN -->
+  <section id="design" class="section section-alt">
     <div class="container">
-      <div class="section-header reveal">
-        <!-- <span class="section-tag">Say Hello</span> -->
-        <h2 class="section-title">Contact Me</h2>
+      <div class="section-label">Design</div>
+      <div class="design-header fade-in">
+        <h2 class="section-heading">Graphic Design</h2>
+        <p class="section-sub">Designing posters, social media creatives and visual identities.</p>
       </div>
+      <div class="design-grid" id="designGrid"></div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="section">
+    <div class="container">
+      <div class="section-label">Leadership</div>
+      <h2 class="section-heading fade-in">Leadership & Beyond Code</h2>
+      <div class="leadership-block fade-in">
+        <div class="leadership-role">
+          <div class="role-header">
+            <div class="role-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="role-title">Design Head</div>
+              <div class="role-org">Students' Representative Council</div>
+            </div>
+          </div>
+          <p class="role-desc">Leading visual communication and design work for SRC activities and events — from event branding and posters to social media campaigns and institutional creatives.</p>
+        </div>
+      </div>
+      <div class="qualities-grid" id="qualitiesGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-label">Contact</div>
       <div class="contact-layout">
-        <div class="contact-info reveal">
-          <p>Have a project in mind or just want to say hi? I'd love to hear from you. Let's create something amazing together!</p>
-          <div class="contact-items">
-            <div class="contact-item">
-              <span class="c-icon">📧</span>
-              <span>navinyaghanekar30@gmail.com</span>
-            </div>
-            <div class="contact-item">
-              <span class="c-icon">💼</span>
-              <span>Open to internships & collaborations</span>
-            </div>
+        <div class="contact-left fade-in">
+          <h2 class="section-heading">Let's Work Together</h2>
+          <p class="contact-desc">Whether it's a development project, design collaboration, internship, or just a conversation — feel free to reach out.</p>
+          <div class="contact-details">
+            <a href="mailto:navinyaghanekar30@gmail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              navinyaghanekar30@gmail.com
+            </a>
+            <a href="https://github.com/Navinya-30" target="_blank" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              github.com/Navinya-30
+            </a>
           </div>
         </div>
-        <form class="contact-form reveal" id="contactForm">
-          <div class="form-group">
-            <input type="text" id="name" placeholder="Your Name" required/>
-            <label for="name">Your Name</label>
+        <form class="contact-form fade-in" id="contactForm">
+          <div class="field-group">
+            <label for="c-name">Name</label>
+            <input type="text" id="c-name" placeholder="Your name" required/>
           </div>
-          <div class="form-group">
-            <input type="email" id="email" placeholder="Your Email" required/>
-            <label for="email">Your Email</label>
+          <div class="field-group">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" placeholder="your@email.com" required/>
           </div>
-          <div class="form-group">
-            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
-            <label for="message">Your Message</label>
+          <div class="field-group">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" rows="5" placeholder="What's on your mind?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <span>Send Message</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-          <div class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-notice" id="formNotice"></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-logo">N<span>.</span></div>
-        <p>© 2026 Navinya. Crafted with ❤️ and lots of ☕</p>
+        <div>
+          <div class="footer-name">Navinya<span class="dot">.</span></div>
+          <div class="footer-role">Full Stack Developer & Creative Designer</div>
+        </div>
         <div class="footer-links">
           <a href="https://github.com/Navinya-30" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/navinyaghanekar" target="_blank">LinkedIn</a>
+          <a href="mailto:navinyaghanekar30@gmail.com">Email</a>
         </div>
       </div>
+      <div class="footer-copy">© 2026 Navinya. All rights reserved.</div>
     </div>
   </footer>
 
