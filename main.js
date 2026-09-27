@@ -152,41 +152,58 @@ skills.forEach(skill => {
 
 /* =============================================
    PROJECTS DATA
-   ─ Replace screenshot paths with your actual images
+   ─ Each project has a unique gradient for its thumbnail.
+   ─ Add your actual GitHub / demo links below.
    ============================================= */
 const projects = [
   {
     name: 'Portfolio Website',
-    desc: 'Personal portfolio showcasing development and design work, built with HTML, CSS and JavaScript.',
+    desc: 'Personal portfolio showcasing development and design work with clean code and modern UI.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    screenshot: '',   // ← add: 'images/portfolio.png'
-    github: 'https://github.com/Navinya-30',
+    gradient: 'linear-gradient(135deg, #0f2027, #1a4a6b, #1e6fa8)',
+    github: 'https://github.com/Navinya-30/Navinya_Portfolio',
     demo: '#',
   },
   {
-    name: 'Project Two',
-    desc: 'Add your project description here. Edit the projects array in main.js.',
-    tags: ['React', 'JavaScript'],
-    screenshot: '',   // ← add screenshot path
-    github: 'https://github.com/Navinya-30',
+    name: 'Auto-Comment-Generator',
+    desc: 'An AI-powered tool that generates relevant and engaging comments automatically from given content.',
+    tags: ['JavaScript'],
+    gradient: 'linear-gradient(135deg, #0d1b2a, #1b4332, #2d6a4f)',
+    github: 'https://github.com/Navinya-30/Auto-Comment-Generator',
     demo: '#',
   },
   {
-    name: 'Project Three',
-    desc: 'Add your project description here. Edit the projects array in main.js.',
-    tags: ['Java', 'MySQL'],
-    screenshot: '',
-    github: 'https://github.com/Navinya-30',
-    demo: '#',
-  },
-  {
-    name: 'Project Four',
-    desc: 'Add your project description here. Edit the projects array in main.js.',
+    name: 'Smart-Public-Commplaint-Tracker',
+    desc: 'A digital platform for submitting, tracking, and managing public complaints efficiently.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    screenshot: '',
-    github: 'https://github.com/Navinya-30',
+    gradient: 'linear-gradient(135deg, #1a0533, #3b0764, #4c1d95)',
+    github: 'https://github.com/Navinya-30/Smart-Public-Complaint-Tracker',
     demo: '#',
   },
+  {
+    name: 'Auto-Verse',
+    desc: 'A smart car showroom management system that streamlines vehicle, customer, and sales operations.',
+    tags: ['HTML', 'Dart', 'JavaScript', 'Swift', 'C++', 'CMake'],
+    gradient: 'linear-gradient(135deg, #1c0b00, #7c2d12, #9a3412)',
+    github: 'https://github.com/Navinya-30/auto_verse',
+    demo: '#',
+  },
+  // {
+  //   name: 'Project Five',
+  //   desc: 'Add your project description here. Edit the projects array in main.js.',
+  //   tags: ['C++', 'Algorithm'],
+  //   gradient: 'linear-gradient(135deg, #0a1628, #0e3460, #0369a1)',
+  //   github: 'https://github.com/Navinya-30',
+  //   demo: '#',
+  // },
+  // {
+  //   name: 'Project Six',
+  //   desc: 'Add your project description here. Edit the projects array in main.js.',
+  //   tags: ['Git', 'GitHub'],
+  //   gradient: 'linear-gradient(135deg, #0d1117, #1a2332, #0f3460)',
+  //   github: 'https://github.com/Navinya-30',
+  //   demo: '#',
+  // },
 ];
 
 const projectsGrid = document.getElementById('projectsGrid');
@@ -195,16 +212,19 @@ projects.forEach((p, i) => {
   card.className = 'project-card fade-in';
   card.style.transitionDelay = `${i * 0.07}s`;
 
-  const thumb = p.screenshot
-    ? `<img src="${p.screenshot}" alt="${p.name}" loading="lazy"/>`
-    : `<div class="project-thumb-placeholder">Screenshot coming soon</div>`;
-
   const demoBtn = p.demo && p.demo !== '#'
     ? `<a href="${p.demo}" target="_blank" class="btn btn-outline btn-sm">Live Demo</a>`
     : '';
 
+  const indexLabel = String(i + 1).padStart(2, '0');
+
   card.innerHTML = `
-    <div class="project-thumb">${thumb}</div>
+    <div class="project-thumb">
+      <div class="project-thumb-gradient" style="background: ${p.gradient}">
+        <div class="project-thumb-title">${p.name}</div>
+      </div>
+      <div class="project-index">${indexLabel}</div>
+    </div>
     <div class="project-body">
       <div class="project-name">${p.name}</div>
       <div class="project-desc">${p.desc}</div>
@@ -217,6 +237,21 @@ projects.forEach((p, i) => {
   `;
   projectsGrid.appendChild(card);
   revealObserver.observe(card);
+
+  // 3D tilt on mouse move
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width  - 0.5;
+    const y = (e.clientY - rect.top)  / rect.height - 0.5;
+    card.style.transform = `translateY(-6px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.5s var(--ease), border-color 0.3s var(--ease), box-shadow 0.35s var(--ease)';
+  });
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.1s ease, border-color 0.3s var(--ease), box-shadow 0.35s var(--ease)';
+  });
 });
 
 /* =============================================
